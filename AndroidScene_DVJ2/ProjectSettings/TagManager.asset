@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - "Org\xE1nicos"
+  - "Cart\xF3n"
+  - Metal
+  - Vidrio
+  - Floor
   layers:
   - Default
   - TransparentFX
