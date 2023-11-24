@@ -17,7 +17,7 @@ public class Garbage : MonoBehaviour{
         if(collision.gameObject.CompareTag("Floor") && !isColliding){
             isColliding = true;
             player.failures++;
-            ui.catState = 2;
+            ui.catState = 3;
         }
     }
 }
