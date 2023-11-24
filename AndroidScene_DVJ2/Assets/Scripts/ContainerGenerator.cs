@@ -10,10 +10,12 @@ public class ContainerGenerator : MonoBehaviour{
     private ARRaycastManager raycastManager;
     private List<ARRaycastHit> hits = new List<ARRaycastHit>();
     private bool isPlaced;
+    private UI ui;
 
     void Start(){
         isPlaced = false;
         raycastManager = FindObjectOfType<ARRaycastManager>();
+        ui = GameObject.FindGameObjectWithTag("UI").GetComponent<UI>();
         containers.SetActive(false);
     }
 
@@ -41,6 +43,7 @@ public class ContainerGenerator : MonoBehaviour{
         containers.transform.parent = null;
         yield return new WaitForSeconds(0.5f);
         garbageGenerator.SetActive(true);
+        ui.catState = 1;
         yield return new WaitForSeconds(0.1f);
         gameObject.SetActive(false);
     }

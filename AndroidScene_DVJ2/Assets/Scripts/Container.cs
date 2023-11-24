@@ -34,10 +34,10 @@ public class Container : MonoBehaviour{
     void OnTriggerEnter(Collider other){
         if(other.gameObject.CompareTag(garbageType)){
             player.score+=10;
-            ui.catState = 1;
+            ui.catState = 2;
         }else{
             player.failures++;
-            ui.catState = 2;
+            ui.catState = 3;
         }
         Destroy(other.gameObject);
     }
