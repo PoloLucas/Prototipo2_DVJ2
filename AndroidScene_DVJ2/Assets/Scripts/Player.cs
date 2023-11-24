@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour{
     public int score;
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour{
 
     void CheckFailures(){
         if(failures>=maxFailures){
+            SceneManager.LoadScene(3);
             //cambio escena
         }
     }
