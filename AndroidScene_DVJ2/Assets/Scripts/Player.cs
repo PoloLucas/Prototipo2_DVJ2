@@ -11,17 +11,23 @@ public class Player : MonoBehaviour{
     void Start(){
         score = 0;
         failures = 0;
-        maxFailures = 3;
+        maxFailures = 10;
     }
 
     void Update(){
+        CheckScore();
         CheckFailures();
+    }
+
+    void CheckScore(){
+        if(score<0){
+            score = 0;
+        }
     }
 
     void CheckFailures(){
         if(failures>=maxFailures){
-            SceneManager.LoadScene(3);
-            //cambio escena
+            SceneManager.LoadScene(2);
         }
     }
 }

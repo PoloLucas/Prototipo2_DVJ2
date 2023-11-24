@@ -9,6 +9,10 @@ TagManager:
   - Metal
   - Vidrio
   - Floor
+  - GatoFeliz
+  - GatoTriste
+  - GatoNormal
+  - UI
   layers:
   - Default
   - TransparentFX
