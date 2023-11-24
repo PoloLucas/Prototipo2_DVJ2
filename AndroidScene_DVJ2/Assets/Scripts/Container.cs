@@ -6,9 +6,11 @@ public class Container : MonoBehaviour{
     [SerializeField]private int containerType=0;
     private string garbageType;
     private Player player;
+    private UI ui;
     
     void Start(){
-        player=GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        ui = GameObject.FindGameObjectWithTag("UI").GetComponent<UI>();
         switch(containerType){
             case 1:{
                 garbageType = "Orgánicos";
@@ -32,8 +34,10 @@ public class Container : MonoBehaviour{
     void OnTriggerEnter(Collider other){
         if(other.gameObject.CompareTag(garbageType)){
             player.score+=10;
+            ui.catState = 1;
         }else{
-            player.score-=10;
+            player.failures++;
+            ui.catState = 2;
         }
         Destroy(other.gameObject);
     }

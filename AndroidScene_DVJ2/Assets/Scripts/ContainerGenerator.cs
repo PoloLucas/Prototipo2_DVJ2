@@ -19,7 +19,7 @@ public class ContainerGenerator : MonoBehaviour{
 
     void Update(){
         PlaceInScene();
-        if(Input.touchCount>0 && !isPlaced || Input.GetKeyDown("space") && !isPlaced){
+        if(Input.touchCount>0 && !isPlaced && containers.activeInHierarchy){
             isPlaced = true;
             StartCoroutine(PlaceContainers());
         }
